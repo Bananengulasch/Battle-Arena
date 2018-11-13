@@ -44,5 +44,14 @@ public class Gegner {
 	public void angreifen(Gegner gegner) {
 		gegner.schadenNehmen(ThreadLocalRandom.current().nextInt());
 	}
+
+	public void spezialfaehigkeitAktiviert() {
+		if(this.spezialfaehigkeit = true) {
+			System.out.println("Spezialfähigkeit aktiviert!");
+		}else {
+			//nothing
+		}
+		
+	}
 	
 }
