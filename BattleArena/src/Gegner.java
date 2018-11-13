@@ -51,7 +51,6 @@ public class Gegner {
 		}else {
 			//nothing
 		}
-		
 	}
 	
 }
