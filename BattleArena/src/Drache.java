@@ -1,7 +1,9 @@
 
-public class Drache {
+public class Drache extends Gegner{
 
-	//GEATS?
-	
+	public Drache(String name, int lebenspunkte, boolean spezialfaehigkeit) {
+		super(name, lebenspunkte, spezialfaehigkeit);
+		
+	}
 }
 
