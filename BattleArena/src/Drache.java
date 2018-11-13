@@ -13,7 +13,12 @@ public class Drache extends Gegner{
 	
 	@Override
 	public void spezialfaehigkeitAktiviert() {
-		
+		boolean aktiv = isSpezialfaehigkeit();
+		if(aktiv = true) {
+			System.out.println("Spezialfähigkeit ---FLIEGEN--- aktiviert!");
+		}else {
+			//nothing
+		}
 	}
 }
 
