@@ -1,3 +1,4 @@
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Gegner {
 	
@@ -35,4 +36,13 @@ public class Gegner {
 	public void setSpezialfaehigkeit(boolean spezialfaehigkeit) {
 		this.spezialfaehigkeit = spezialfaehigkeit;
 	}
+	
+	public void schadenNehmen(int punkte) {
+		this.lebenspunkte = lebenspunkte - punkte;
+	}
+	
+	public void angreifen(Gegner gegner) {
+		gegner.schadenNehmen(ThreadLocalRandom.current().nextInt());
+	}
+	
 }
