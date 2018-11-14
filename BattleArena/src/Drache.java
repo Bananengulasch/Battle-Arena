@@ -10,13 +10,10 @@ public class Drache extends Gegner{
 	public void angreifen(Gegner gegner) {
 		int min = 20;
 		int max = 25;
-		int verletzung = ThreadLocalRandom.current().nextInt(1, 10 + 1);
+		int verletzungswahrscheinlichkeit = ThreadLocalRandom.current().nextInt(1, 10 + 1);
 		if(super.isSpezialfaehigkeit() == true) {
-			if(verletzung >= 1 && verletzung <= 3) {
+			if(verletzungswahrscheinlichkeit >= 1 && verletzungswahrscheinlichkeit <= 2) {
 					verletzungBeiAngriff(ThreadLocalRandom.current().nextInt(5, 10 +1));
-				}
-				else {
-					
 				}
 			int abzug = ThreadLocalRandom.current().nextInt(5,10 + 1);
 			gegner.schadenNehmen(ThreadLocalRandom.current().nextInt(min, max + 1) - abzug);
