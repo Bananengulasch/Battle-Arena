@@ -53,7 +53,7 @@ public class Zwerg extends Gegner{
 		
 		if(super.getLebenspunkte() < 50) {
 			
-		
+		super.setSpezialfaehigkeit(true);
 			if(super.isSpezialfaehigkeit() == true) {
 			System.out.println("Spezialfähigkeit Zwergenkopfnuss aktiviert!");
 			
