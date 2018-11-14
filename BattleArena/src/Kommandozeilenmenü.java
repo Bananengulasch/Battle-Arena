@@ -11,7 +11,7 @@ public class Kommandozeilenmenü {
 
 	public void MenüAnzeigen() {
 		System.out.println("MENÜ");
-		System.out.println("1) AUSGABE");
+		System.out.println("1) SETUP");
 		System.out.println("2) RECHNEN");
 		System.out.println("3) exit");
 	}
@@ -24,7 +24,7 @@ public class Kommandozeilenmenü {
 			switch(s)
 			{
 			case "1":
-				this.ausgabe();
+				this.setup();
 				break;
 			case "2":
 				this.rechnen();
@@ -39,9 +39,11 @@ public class Kommandozeilenmenü {
 		scan.close();
 	}
 	
-	public void ausgabe()
+	public void setup()
 	{
-		System.out.println("AUSGABE");
+		System.out.println("------------------------------");
+		
+
 	}
 	
 	public void rechnen()
