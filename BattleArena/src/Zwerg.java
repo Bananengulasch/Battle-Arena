@@ -17,7 +17,13 @@ public class Zwerg extends Gegner{
 				{
 					if(super.getLebenspunkte() < 10)
 					{
-					
+						if(wahrscheinlichkeit >= 1 && wahrscheinlichkeit <= 7) {
+							gegner.schadenNehmen(ThreadLocalRandom.current().nextInt(min,max + 1)*2);
+							}
+							else {
+								gegner.schadenNehmen(ThreadLocalRandom.current().nextInt(min,max + 1)/2);
+							}
+						
 					} else {
 						if(wahrscheinlichkeit >= 1 && wahrscheinlichkeit <= 5) {
 						gegner.schadenNehmen(ThreadLocalRandom.current().nextInt(min,max + 1)*2);
@@ -27,7 +33,12 @@ public class Zwerg extends Gegner{
 						}
 					}
 				} else {
-					
+					if(wahrscheinlichkeit >= 1 && wahrscheinlichkeit <= 3) {
+						gegner.schadenNehmen(ThreadLocalRandom.current().nextInt(min,max + 1)*2);
+						}
+						else {
+							gegner.schadenNehmen(ThreadLocalRandom.current().nextInt(min,max + 1)/2);
+						}
 				}
 			
 		
