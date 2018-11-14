@@ -35,7 +35,14 @@ public class Drache extends Gegner{
 	}
 	
 	public void spezialfaehigkeitDeaktivieren() {
-		super.setSpezialfaehigkeit(false);
+		if(super.isSpezialfaehigkeit() == true) {
+			if(this.getLebenspunkte() < 11) {
+				System.out.println("Sie können die Spezialfähigkeit nicht deaktivieren!" +"\n"+"Sie haben sonst keine Lebenspunkte mehr!");
+			}else {
+				this.setLebenspunkte(getLebenspunkte()-10);
+			}
+			this.setSpezialfaehigkeit(false);
+		}
 	}
 }
 
