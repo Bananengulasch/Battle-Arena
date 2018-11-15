@@ -62,7 +62,7 @@ public class Charakter {
 	}
 	
 	public String toString() {
-		return "";
+		return "NAME --> "+ name + " HP --> " + lebenspunkte + " SF AKTIVIERT? --> "+ spezialfaehigkeit;
 	}
 	
 }
