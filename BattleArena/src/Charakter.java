@@ -60,4 +60,9 @@ public class Charakter {
 			//nothing
 		}
 	}
+	
+	public String toString() {
+		return "";
+	}
+	
 }

@@ -6,7 +6,7 @@ public class Kommandozeilenmenü {
 	Scanner scan;
 	Charakter c1;
 	Charakter c2;
-	Kampfarena a;
+	Kampfarena a = new Kampfarena(c1,c2);
 	
 	public Kommandozeilenmenü() {
 		this.scan = new Scanner(System.in);
@@ -69,7 +69,7 @@ public class Kommandozeilenmenü {
 		System.out.println("Bitte den Namen von Spieler 1 eingeben!");
 		String n = scan.nextLine();
 		if(c.equals("Drache")) {
-			Charakter c1 = new Drache(c, 100, false);
+			Charakter c1 = new Drache(n, 100, false);
 			a.setCharakter1(c1);
 		}else {
 			if(c.equals("Zwerg")) {

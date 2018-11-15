@@ -10,7 +10,6 @@ public class Kampfarena {
 	public Kampfarena(Charakter weis, Charakter schwarz) {
 		this.weis = weis;
 		this.schwarz = schwarz;
-		fight();
 	}
 	
 	public void setEntscheidung(String s) {
