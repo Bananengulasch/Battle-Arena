@@ -70,9 +70,11 @@ public class Kommandozeilenmenü {
 		String n = scan.nextLine();
 		if(c.equals("Drache")) {
 			Charakter c1 = new Drache(c, 100, false);
+			a.setCharakter1(c1);
 		}else {
 			if(c.equals("Zwerg")) {
 				Charakter c1 = new Zwerg(c, 100, false);
+				a.setCharakter1(c1);
 			}else {
 				System.out.println("Dieser Charaktertyp exisitert nicht!");
 				charakterEins();
@@ -88,9 +90,11 @@ public class Kommandozeilenmenü {
 		String n = scan.nextLine();
 		if(c.equals("Drache")) {
 			Charakter c2 = new Drache(c, 100, false);
+			a.setCharakter2(c2);
 		}else {
 			if(c.equals("Zwerg")) {
 				Charakter c2 = new Zwerg(c, 100, false);
+				a.setCharakter2(c2);
 			}else {
 				System.out.println("Dieser Charaktertyp exisitert nicht!");
 				charakterZwei();
