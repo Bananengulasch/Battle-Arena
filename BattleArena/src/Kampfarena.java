@@ -12,6 +12,14 @@ public class Kampfarena {
 		fight();
 	}
 	
+	public void setCharakter1(Charakter g) {
+		this.weis = g;
+	}
+	
+	public void setCharakter2(Charakter g) {
+		this.schwarz = g;
+	}
+	
 	public void fight() {
 		int anfaenger = ThreadLocalRandom.current().nextInt(1,2 + 1);
 		if(anfaenger == 1) {
@@ -22,7 +30,12 @@ public class Kampfarena {
 	}
 	
 	public void kampfsimulieren(Charakter angreifer, Charakter opfer) {
-		
+		if(sieger == null) {
+			
+			if(opfer.getLebenspunkte() <= 0) {
+				sieger = angreifer;
+			}
+		}
 	}
 	
 	public String siegerAusgeben() {

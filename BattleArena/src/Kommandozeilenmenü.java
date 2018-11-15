@@ -6,7 +6,8 @@ public class Kommandozeilenmenü {
 	Scanner scan;
 	Charakter c1;
 	Charakter c2;
-
+	Kampfarena a;
+	
 	public Kommandozeilenmenü() {
 		this.scan = new Scanner(System.in);
 		charaktere();
@@ -43,10 +44,10 @@ public class Kommandozeilenmenü {
 			switch(s)
 			{
 			case "1":
-				this.eins();
+				this.charakterEins();
 				break;
 			case "2":
-				this.zwei();
+				this.charakterZwei();
 				break;
 			case "3":
 				this.start();
@@ -62,12 +63,39 @@ public class Kommandozeilenmenü {
 		scan.close();
 	}
 	
-	public void eins() {
+	public void charakterEins() {
+		System.out.println("Bitte den Charaktertyp(Drache/Zwerg) von Spieler 1 eingeben!");
+		String c = scan.nextLine();
+		System.out.println("Bitte den Namen von Spieler 1 eingeben!");
+		String n = scan.nextLine();
+		if(c.equals("Drache")) {
+			Charakter c1 = new Drache(c, 100, false);
+		}else {
+			if(c.equals("Zwerg")) {
+				Charakter c1 = new Zwerg(c, 100, false);
+			}else {
+				System.out.println("Dieser Charaktertyp exisitert nicht!");
+				charakterEins();
+			}
+		}
 		
 	}
 	
-	public void zwei() {
-		
+	public void charakterZwei() {
+		System.out.println("Bitte den Charaktertyp(Drache/Zwerg) von Spieler 2 eingeben!");
+		String c = scan.nextLine();
+		System.out.println("Bitte den Namen von Spieler 2 eingeben!");
+		String n = scan.nextLine();
+		if(c.equals("Drache")) {
+			Charakter c2 = new Drache(c, 100, false);
+		}else {
+			if(c.equals("Zwerg")) {
+				Charakter c2 = new Zwerg(c, 100, false);
+			}else {
+				System.out.println("Dieser Charaktertyp exisitert nicht!");
+				charakterZwei();
+			}
+		}
 	}
 
 	public void start() {
