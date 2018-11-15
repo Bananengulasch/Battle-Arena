@@ -24,4 +24,8 @@ public class Kampfarena {
 	public void kampfsimulieren(Gegner angreifer, Gegner opfer) {
 		
 	}
+	
+	public String siegerAusgeben() {
+		return "Der Sieger ist: " + sieger;
+	}
 }
