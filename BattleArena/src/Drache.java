@@ -1,13 +1,13 @@
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Drache extends Gegner{
+public class Drache extends Charakter{
 
 	public Drache(String name, int lebenspunkte, boolean spezialfaehigkeit) {
 		super(name, lebenspunkte, spezialfaehigkeit);	
 	}
 	
 	@Override
-	public void angreifen(Gegner gegner) {
+	public void angreifen(Charakter gegner) {
 		int min = 20;
 		int max = 25;
 		int verletzungswahrscheinlichkeit = ThreadLocalRandom.current().nextInt(1, 10 + 1);

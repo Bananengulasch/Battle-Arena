@@ -1,12 +1,12 @@
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Zwerg extends Gegner{
+public class Zwerg extends Charakter{
 	
 	public Zwerg(String name, int lebenspunkte, boolean spezialfaehigkeit) {
 		super(name, lebenspunkte, spezialfaehigkeit);
 	}
 	
-	public void angreifen(Gegner gegner) {
+	public void angreifen(Charakter gegner) {
 		int min = 15;
 		int max = 25;
 		
