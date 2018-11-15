@@ -1,12 +1,12 @@
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Gegner {
+public class Charakter {
 	
 	private String name;
 	private int lebenspunkte;
 	private boolean spezialfaehigkeit;
 	
-	public Gegner(String name, int lebenspunkte, boolean spezialfaehigkeit) {
+	public Charakter(String name, int lebenspunkte, boolean spezialfaehigkeit) {
 		super();
 		this.name = name;
 		this.lebenspunkte = lebenspunkte;
@@ -41,7 +41,7 @@ public class Gegner {
 		this.lebenspunkte = lebenspunkte - punkte;
 	}
 	
-	public void angreifen(Gegner gegner) {
+	public void angreifen(Charakter gegner) {
 		gegner.schadenNehmen(ThreadLocalRandom.current().nextInt());
 	}
 

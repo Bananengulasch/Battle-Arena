@@ -2,11 +2,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Kampfarena {
 	
-	private Gegner weis;
-	private Gegner schwarz;
-	private Gegner sieger;
+	private Charakter weis;
+	private Charakter schwarz;
+	private Charakter sieger;
 	
-	public Kampfarena(Gegner weis, Gegner schwarz) {
+	public Kampfarena(Charakter weis, Charakter schwarz) {
 		this.weis = weis;
 		this.schwarz = schwarz;
 		fight();
@@ -21,7 +21,7 @@ public class Kampfarena {
 		}
 	}
 	
-	public void kampfsimulieren(Gegner angreifer, Gegner opfer) {
+	public void kampfsimulieren(Charakter angreifer, Charakter opfer) {
 		
 	}
 	
