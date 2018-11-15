@@ -53,4 +53,11 @@ public class Charakter {
 		}
 	}
 	
+	public void spezialfaehigkeitDeaktiviert() {
+		if(this.spezialfaehigkeit = true) {
+			System.out.println("Spezialfähigkeit aktiviert!");
+		}else {
+			//nothing
+		}
+	}
 }

@@ -103,6 +103,7 @@ public class Kommandozeilenmenü {
 	}
 
 	public void start() {
+		a.fight();
 		String s = "-";
 		while (!s.equals("3")) {
 			MenüAnzeigen();
@@ -135,15 +136,15 @@ public class Kommandozeilenmenü {
 	}
 	
 	public void angreifen() {
-		System.out.println("------------------------------");
+		a.setEntscheidung("1");
 	}
 	
 	public void aktivieren() {
-		System.out.println("------------------------------");
+		a.setEntscheidung("2");
 	}
 	
 	public void deaktivieren() {
-		System.out.println("------------------------------");
+		a.setEntscheidung("3");
 	}
 	
 	public void fehler() {
