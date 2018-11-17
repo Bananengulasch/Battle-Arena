@@ -47,17 +47,17 @@ public class Charakter {
 
 	public void spezialfaehigkeitAktiviert() {
 		if(this.spezialfaehigkeit = true) {
-			System.out.println("Spezialfähigkeit aktiviert!");
+			System.out.println("Spezialfähigkeit ist aktiv!");
 		}else {
-			//nothing
+			System.out.println("Spezialfähigkeit ist nicht aktiv!");
 		}
 	}
 	
 	public void spezialfaehigkeitDeaktiviert() {
-		if(this.spezialfaehigkeit = true) {
-			System.out.println("Spezialfähigkeit aktiviert!");
+		if(this.spezialfaehigkeit = false) {
+			System.out.println("Spezialfähigkeit ist nicht aktiv!");
 		}else {
-			//nothing
+			System.out.println("Spezialfähigkeit ist aktiv!");
 		}
 	}
 	

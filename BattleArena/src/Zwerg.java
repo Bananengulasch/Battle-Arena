@@ -58,7 +58,7 @@ public class Zwerg extends Charakter{
 			System.out.println("Spezialfähigkeit Zwergenkopfnuss aktiviert!");
 			
 			}else {
-			//nothing
+			System.out.println("Spezialfähigkeit ist nicht aktiv!");
 			}
 		}
 		else {
