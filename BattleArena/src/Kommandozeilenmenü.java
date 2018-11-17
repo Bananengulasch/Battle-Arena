@@ -64,46 +64,51 @@ public class Kommandozeilenmenü {
 	}
 	
 	public void charakterEins() {
-		System.out.println("Bitte den Charaktertyp(Drache/Zwerg) von Spieler 1 eingeben!");
+		System.out.println("Bitte den Charakter (Drache/Zwerg) von Spieler 1 eingeben!");
 		String c = scan.nextLine();
 		System.out.println("Bitte den Namen von Spieler 1 eingeben!");
 		String n = scan.nextLine();
 		if(c.equals("Drache")) {
 			Charakter c1 = new Drache(n, 100, false);
 			a.setCharakter1(c1);
+			System.out.println(c1);
 		}else {
 			if(c.equals("Zwerg")) {
 				Charakter c1 = new Zwerg(n, 100, false);
 				a.setCharakter1(c1);
+				System.out.println(c1);
 			}else {
-				System.out.println("Dieser Charaktertyp exisitert nicht!");
+				System.out.println("Dieser Charaktertyp existiert nicht!");
 				charakterEins();
 			}
 		}
+		setup();
 		
 	}
 	
 	public void charakterZwei() {
-		System.out.println("Bitte den Charaktertyp(Drache/Zwerg) von Spieler 2 eingeben!");
+		System.out.println("Bitte den Charakter (Drache/Zwerg) von Spieler 2 eingeben!");
 		String c = scan.nextLine();
 		System.out.println("Bitte den Namen von Spieler 2 eingeben!");
 		String n = scan.nextLine();
 		if(c.equals("Drache")) {
 			Charakter c2 = new Drache(n, 100, false);
 			a.setCharakter2(c2);
+			System.out.println(c2);
 		}else {
 			if(c.equals("Zwerg")) {
 				Charakter c2 = new Zwerg(n, 100, false);
 				a.setCharakter2(c2);
+				System.out.println(c2);
 			}else {
-				System.out.println("Dieser Charaktertyp exisitert nicht!");
+				System.out.println("Dieser Charaktertyp existiert nicht!");
 				charakterZwei();
 			}
 		}
+		setup();
 	}
 
 	public void start() {
-		a.fight();
 		String s = "-";
 		while (!s.equals("3")) {
 			MenüAnzeigen();
@@ -111,15 +116,12 @@ public class Kommandozeilenmenü {
 			switch(s)
 			{
 			case "1":
-				this.setup();
-				break;
-			case "2":
 				this.angreifen();
 				break;
-			case "3":
+			case "2":
 				this.aktivieren();
 				break;
-			case "4":
+			case "3":
 				this.deaktivieren();
 				break;
 			default:
@@ -128,11 +130,6 @@ public class Kommandozeilenmenü {
 			}
 		}
 		scan.close();
-	}
-	
-	public void auswahlCharakter() {
-		System.out.println("------------------------------");
-		System.out.println("Welchen Charakter möchten sie spielen");
 	}
 	
 	public void angreifen() {
