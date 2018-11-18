@@ -24,27 +24,24 @@ public class Drache extends Charakter{
 	
 	@Override
 	public void spezialfaehigkeitAktiviert() {
-		
 		super.setSpezialfaehigkeit(true);
 		System.out.println("Spezialfähigkeit ---FLIEGEN--- aktiviert!");
-		fliegen();
-			
-		
+		fliegen();	
 	}
 	
 	public void fliegen() {
 		this.setLebenspunkte(getLebenspunkte()+10);
-		
 	}
 	
-	public void spezialfaehigkeitDeaktivieren() {
+	public void spezialfaehigkeitDeaktiviert() {
 		if(super.isSpezialfaehigkeit() == true) {
-			if(this.getLebenspunkte() < 11) {
-				System.out.println("Sie können die Spezialfähigkeit nicht deaktivieren!" +"\n"+"Sie haben sonst keine Lebenspunkte mehr!");
+			if(this.getLebenspunkte() > 11) {
+				this.setLebenspunkte(getLebenspunkte()-10);	
+				this.setSpezialfaehigkeit(false);
 			}else {
-				this.setLebenspunkte(getLebenspunkte()-10);
+				System.out.println("Zu wenig Leben zum Deaktivieren!");
+				this.setSpezialfaehigkeit(true);
 			}
-			this.setSpezialfaehigkeit(false);
 		}
 	}
 	

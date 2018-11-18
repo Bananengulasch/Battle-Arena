@@ -15,7 +15,7 @@ public class Kommandozeilenmenü {
 	}
 	
 	public void MenüAnzeigen() {
-		System.out.println("------------------------------");
+		System.out.println("------------------------------------------------------------");
 		System.out.println("SPIELMENÜ");
 		System.out.println("1) ANGREIFEN");
 		System.out.println("2) AKTIVIEREN");
@@ -25,8 +25,10 @@ public class Kommandozeilenmenü {
 	
 	
 	public Charakter charakterEins(Charakter a) {
+		System.out.println("------------------------------------------------------------");
 		System.out.println("Bitte den Charakter (Drache/Zwerg) von Spieler 1 eingeben!");
 		String c = scan.nextLine();
+		System.out.println("------------------------------------------------------------");
 		System.out.println("Bitte den Namen von Spieler 1 eingeben!");
 		String n = scan.nextLine();
 		if(c.equals("Drache")) {
@@ -35,6 +37,7 @@ public class Kommandozeilenmenü {
 			if(c.equals("Zwerg")) {
 				a = new Zwerg(n, 100, false);
 			}else {
+				System.out.println("------------------------------------------------------------");
 				System.out.println("Dieser Charaktertyp existiert nicht!");
 				charakterZwei(a);
 			}
@@ -44,8 +47,10 @@ public class Kommandozeilenmenü {
 	}
 	
 	public Charakter charakterZwei(Charakter a) {
+		System.out.println("------------------------------------------------------------");
 		System.out.println("Bitte den Charakter (Drache/Zwerg) von Spieler 2 eingeben!");
 		String c = scan.nextLine();
+		System.out.println("------------------------------------------------------------");
 		System.out.println("Bitte den Namen von Spieler 2 eingeben!");
 		String n = scan.nextLine();
 		if(c.equals("Drache")) {
@@ -54,6 +59,7 @@ public class Kommandozeilenmenü {
 			if(c.equals("Zwerg")) {
 				a = new Zwerg(n, 100, false);
 			}else {
+				System.out.println("------------------------------------------------------------");
 				System.out.println("Dieser Charaktertyp existiert nicht!");
 				charakterZwei(a);
 			}
@@ -98,7 +104,7 @@ public class Kommandozeilenmenü {
 	}
 	
 	public void fehler() {
-		System.out.println("------------------------------");
+		System.out.println("------------------------------------------------------------");
 		System.out.println("Sie können nur einen der gültigen Werte eingeben!");
 	}
 

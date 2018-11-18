@@ -16,9 +16,6 @@ public class Kampfarena {
 		this.weis = k1.charakterEins(weis);
 		this.schwarz = k1.charakterZwei(schwarz);;
 		fight();
-		
-		
-		
 	}
 	
 	public void setCharakter1(Charakter g) {
@@ -30,23 +27,21 @@ public class Kampfarena {
 	}
 	
 	public void fight() {
-		
 		if(sieger == null) {
-			System.out.println("Spieler 1 -- > " + weis);
-			System.out.println("Spieler 2 -- > " + schwarz);
+			System.out.println("------------------------------------------------------------");
+			System.out.println("SPIELER 1 --> " + weis);
+			System.out.println("SPIELER 2 --> " + schwarz);
 		if(anfaenger == 1) {
+			System.out.println("------------------------------------------------------------");
 			System.out.println(weis.getName() + " ist an der Reihe.");
 			anfaenger++;
 			kampfsimulieren(weis,schwarz);
-			
 		} else {
-			
+			System.out.println("------------------------------------------------------------");
 			System.out.println(schwarz.getName() + " ist an der Reihe");
 			anfaenger--;
 			kampfsimulieren(schwarz, weis);
-			
 		}
-		
 		}
 		
 	}
@@ -60,6 +55,7 @@ public class Kampfarena {
 				if(angreifer.isSpezialfaehigkeit() == false) {
 					angreifer.spezialfaehigkeitAktiviert();
 				}else {
+					System.out.println("------------------------------------------------------------");
 					System.out.println("Ihre Spezialfaehigkeit ist bereits aktiv. Bitte wählen Sie eine andere Option!");
 					kampfsimulieren(angreifer, opfer);
 				}
@@ -67,6 +63,7 @@ public class Kampfarena {
 			}else if(angreifer.isSpezialfaehigkeit() == true) {
 				angreifer.spezialfaehigkeitDeaktiviert();
 			}else {
+				System.out.println("------------------------------------------------------------");
 				System.out.println("Ihre Spezialfaehigkeit ist nicht aktiv. Bitte wählen Sie eine andere Option!");
 				kampfsimulieren(angreifer, opfer);
 			}				
@@ -74,14 +71,12 @@ public class Kampfarena {
 				sieger = angreifer;
 				verlierer = opfer;
 				System.out.println(siegerAusgeben());
-				
 			}
 			fight();
-			
-		
 	}
 	
 	public String siegerAusgeben() {
+		System.out.println("------------------------------------------------------------");
 		return sieger.getName()+ " hat gegen " + verlierer.getName() + " gewonnen! Glückwunsch!";
 	}
 }
