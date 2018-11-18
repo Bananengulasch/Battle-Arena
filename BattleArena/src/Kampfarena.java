@@ -29,8 +29,8 @@ public class Kampfarena {
 	public void fight() {
 		if(sieger == null) {
 			System.out.println("------------------------------------------------------------");
-			System.out.println("SPIELER 1 --> " + weis);
-			System.out.println("SPIELER 2 --> " + schwarz);
+			System.out.println("*** SPIELER 1 ***  " + weis);
+			System.out.println("*** SPIELER 2 ***  " + schwarz);
 		if(anfaenger == 1) {
 			System.out.println("------------------------------------------------------------");
 			System.out.println(weis.getName() + " ist an der Reihe.");

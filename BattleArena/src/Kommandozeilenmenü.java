@@ -31,12 +31,12 @@ public class Kommandozeilenmenü {
 		System.out.println("------------------------------------------------------------");
 		System.out.println("Bitte den Namen von Spieler 1 eingeben!");
 		String n = scan.nextLine();
-		if(c.equals("Drache")) {
+		if(c.toLowerCase().equals("drache")) {
 			a = new Drache(n, 100, false);
 		}else {
-			if(c.equals("Zwerg")) {
+			if(c.toLowerCase().equals("zwerg")) {
 				a = new Zwerg(n, 100, false);
-			}else if(c.equals("SexyPaul")) {
+			}else if(c.toLowerCase().equals("sexypaul")) {
 				a = new SexyPaul(n, 100, false);
 			}else  {
 				System.out.println("------------------------------------------------------------");
@@ -55,12 +55,12 @@ public class Kommandozeilenmenü {
 		System.out.println("------------------------------------------------------------");
 		System.out.println("Bitte den Namen von Spieler 2 eingeben!");
 		String n = scan.nextLine();
-		if(c.equals("Drache")) {
+		if(c.toLowerCase().equals("drache")) {
 			a = new Drache(n, 100, false);
 		}else {
-			if(c.equals("Zwerg")) {
+			if(c.toLowerCase().equals("zwerg")) {
 				a = new Zwerg(n, 100, false);
-			}else if(c.equals("SexyPaul")) {
+			}else if(c.toLowerCase().equals("sexypaul")) {
 				a = new SexyPaul(n, 100, false);
 			}else {
 				System.out.println("------------------------------------------------------------");
