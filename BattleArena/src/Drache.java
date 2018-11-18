@@ -37,7 +37,8 @@ public class Drache extends Charakter{
 		
 	}
 	
-	public void spezialfaehigkeitDeaktivieren() {
+	@Override
+	public void spezialfaehigkeitDeaktiviert() {
 		if(super.isSpezialfaehigkeit() == true) {
 			if(this.getLebenspunkte() < 11) {
 				System.out.println("Sie können die Spezialfähigkeit nicht deaktivieren!" +"\n"+"Sie haben sonst keine Lebenspunkte mehr!");

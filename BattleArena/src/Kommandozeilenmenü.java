@@ -34,7 +34,9 @@ public class Kommandozeilenmenü {
 		}else {
 			if(c.equals("Zwerg")) {
 				a = new Zwerg(n, 100, false);
-			}else {
+			}else if(c.equals("SexyPaul")) {
+				a = new SexyPaul(n, 100, false);
+			}else  {
 				System.out.println("Dieser Charaktertyp existiert nicht!");
 				charakterZwei(a);
 			}
@@ -53,10 +55,14 @@ public class Kommandozeilenmenü {
 		}else {
 			if(c.equals("Zwerg")) {
 				a = new Zwerg(n, 100, false);
+				
+			}else if(c.equals("SexyPaul")) {
+				a = new SexyPaul(n, 100, false);
 			}else {
 				System.out.println("Dieser Charaktertyp existiert nicht!");
 				charakterZwei(a);
 			}
+			
 		}
 		return a;
 	}

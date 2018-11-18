@@ -58,7 +58,7 @@ public class Zwerg extends Charakter{
 			
 		super.setSpezialfaehigkeit(true);
 			if(super.isSpezialfaehigkeit() == true) {
-			System.out.println("Spezialfähigkeit Zwergenkopfnuss aktiviert!");
+				System.out.println("Spezialfähigkeit ---ZWERGENKOPFNUSS--- aktiviert!");
 			
 			}else {
 			System.out.println("Spezialfähigkeit ist nicht aktiv!");
