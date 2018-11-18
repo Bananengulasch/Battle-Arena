@@ -68,6 +68,9 @@ public class Zwerg extends Charakter{
 		System.out.println("Die Spezialfaehigkeit laesst sich erst aktivieren wenn ihre Lebenspunkte unter 50 fallen!");	
 		}
 		}
-	
+	@Override
+	public void spezialfaehigkeitDeaktiviert() {
+		super.setSpezialfaehigkeit(false);
+	}
 	
 	}

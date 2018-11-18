@@ -35,13 +35,13 @@ public class Kampfarena {
 			System.out.println("Spieler 1 -- > " + weis);
 			System.out.println("Spieler 2 -- > " + schwarz);
 		if(anfaenger == 1) {
-			System.out.println("Spieler 1 ist an der Reihe.");
+			System.out.println(weis.getName() + " ist an der Reihe.");
 			anfaenger++;
 			kampfsimulieren(weis,schwarz);
 			
 		} else {
 			
-			System.out.println("Spieler 2 ist an der Reihe");
+			System.out.println(schwarz.getName() + " ist an der Reihe");
 			anfaenger--;
 			kampfsimulieren(schwarz, weis);
 			
@@ -57,10 +57,19 @@ public class Kampfarena {
 			if(a == 1) {
 				angreifer.angreifen(opfer);
 			}else if(a == 2) {
-				angreifer.spezialfaehigkeitAktiviert();
-			}else {
+				if(angreifer.isSpezialfaehigkeit() == false) {
+					angreifer.spezialfaehigkeitAktiviert();
+				}else {
+					System.out.println("Ihre Spezialfaehigkeit ist bereits aktiv. Bitte wählen Sie eine andere Option!");
+					kampfsimulieren(angreifer, opfer);
+				}
+				
+			}else if(angreifer.isSpezialfaehigkeit() == true) {
 				angreifer.spezialfaehigkeitDeaktiviert();
-			}
+			}else {
+				System.out.println("Ihre Spezialfaehigkeit ist nicht aktiv. Bitte wählen Sie eine andere Option!");
+				kampfsimulieren(angreifer, opfer);
+			}				
 			if(opfer.getLebenspunkte() < 0) {
 				sieger = angreifer;
 				verlierer = opfer;
