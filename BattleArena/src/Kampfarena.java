@@ -53,7 +53,19 @@ public class Kampfarena {
 				angreifer.angreifen(opfer);
 			}else if(a == 2) {
 				if(angreifer.isSpezialfaehigkeit() == false) {
+					if(angreifer instanceof SexyPaul) {
+					SexyPaul angreifers = (SexyPaul)angreifer;
+					if(angreifers.getCounter() > 0){
+						System.out.println("------------------------------------------------------------");
+						System.out.print("Sie haben Ihre Spezialfaehigkeit schon eingesetzt! \n");
+						
+					}else {
+						angreifer.spezialfaehigkeitAktiviert();
+						kampfsimulieren(angreifer, opfer);
+					}
+					}else {
 					angreifer.spezialfaehigkeitAktiviert();
+					}
 				}else {
 					System.out.println("------------------------------------------------------------");
 					System.out.println("Ihre Spezialfaehigkeit ist bereits aktiv. Bitte wählen Sie eine andere Option!");

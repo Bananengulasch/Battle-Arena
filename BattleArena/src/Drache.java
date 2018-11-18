@@ -33,12 +33,14 @@ public class Drache extends Charakter{
 		this.setLebenspunkte(getLebenspunkte()+10);
 	}
 	
+	@Override
 	public void spezialfaehigkeitDeaktiviert() {
 		if(super.isSpezialfaehigkeit() == true) {
 			if(this.getLebenspunkte() > 11) {
 				this.setLebenspunkte(getLebenspunkte()-10);	
 				this.setSpezialfaehigkeit(false);
 			}else {
+				System.out.println("------------------------------------------------------------");
 				System.out.println("Zu wenig Leben zum Deaktivieren!");
 				this.setSpezialfaehigkeit(true);
 			}

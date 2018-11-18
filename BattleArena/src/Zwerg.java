@@ -49,13 +49,16 @@ public class Zwerg extends Charakter{
 			
 		super.setSpezialfaehigkeit(true);
 			if(super.isSpezialfaehigkeit() == true) {
+			System.out.println("------------------------------------------------------------");
 			System.out.println("Spezialfähigkeit --ZWERGENKOPFNUSS-- aktiviert!");
 			
 			}else {
+				System.out.println("------------------------------------------------------------");
 			System.out.println("Spezialfähigkeit ist nicht aktiv!");
 			}
 		}
 		else {
+			System.out.println("------------------------------------------------------------");
 		System.out.println("Die Spezialfaehigkeit laesst sich erst aktivieren wenn ihre Lebenspunkte unter 50 fallen!");	
 			}
 		}
