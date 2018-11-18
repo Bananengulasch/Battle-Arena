@@ -24,13 +24,12 @@ public class Drache extends Charakter{
 	
 	@Override
 	public void spezialfaehigkeitAktiviert() {
-		boolean aktiv = super.isSpezialfaehigkeit();
-		if(aktiv == true) {
-			System.out.println("Spezialfähigkeit ---FLIEGEN--- aktiviert!");
-			fliegen();
-		}else {
-			//nothing
-		}
+		
+		super.setSpezialfaehigkeit(true);
+		System.out.println("Spezialfähigkeit ---FLIEGEN--- aktiviert!");
+		fliegen();
+			
+		
 	}
 	
 	public void fliegen() {

@@ -5,15 +5,20 @@ public class Kampfarena {
 	private Charakter weis;
 	private Charakter schwarz;
 	private Charakter sieger;
-	private String entscheidung;
+	private Charakter verlierer;
+	
+	private Kommandozeilenmenü k1 = new Kommandozeilenmenü();
+	
+	
+	int anfaenger = ThreadLocalRandom.current().nextInt(1,2 + 1);
 	
 	public Kampfarena(Charakter weis, Charakter schwarz) {
-		this.weis = weis;
-		this.schwarz = schwarz;
-	}
-	
-	public void setEntscheidung(String s) {
-		this.entscheidung = s;
+		this.weis = k1.charakterEins(weis);
+		this.schwarz = k1.charakterZwei(schwarz);;
+		fight();
+		
+		
+		
 	}
 	
 	public void setCharakter1(Charakter g) {
@@ -25,35 +30,49 @@ public class Kampfarena {
 	}
 	
 	public void fight() {
-		int anfaenger = ThreadLocalRandom.current().nextInt(1,2 + 1);
-		if(anfaenger == 1) {
-			kampfsimulieren(weis,schwarz);
-			System.out.println("Spieler 1 beginnt.");
-		} else {
-			kampfsimulieren(schwarz,weis);
-			System.out.println("Spieler 2 beginnt.");
-		}
-	}
-	
-	public void kampfsimulieren(Charakter angreifer, Charakter opfer) {
+		
 		if(sieger == null) {
-			if(entscheidung.equals("1")) {
-				angreifer.angreifen(opfer);
-			}else if(entscheidung.equals("2")) {
-				angreifer.setSpezialfaehigkeit(true);
-			}else if(entscheidung.equals("3")){
-				angreifer.setSpezialfaehigkeit(false);
-			}
-			if(opfer.getLebenspunkte() <= 0) {
-				sieger = angreifer;
-				siegerAusgeben();
-			}
+			System.out.println("Spieler 1 -- > " + weis);
+			System.out.println("Spieler 2 -- > " + schwarz);
+		if(anfaenger == 1) {
+			System.out.println("Spieler 1 ist an der Reihe.");
+			anfaenger++;
+			kampfsimulieren(weis,schwarz);
 			
+		} else {
+			
+			System.out.println("Spieler 2 ist an der Reihe");
+			anfaenger--;
+			kampfsimulieren(schwarz, weis);
+			
+		}
+		
 		}
 		
 	}
 	
+	public void kampfsimulieren(Charakter angreifer, Charakter opfer) {
+			k1.start();
+			int a = k1.getEntscheidung();
+			if(a == 1) {
+				angreifer.angreifen(opfer);
+			}else if(a == 2) {
+				angreifer.spezialfaehigkeitAktiviert();
+			}else {
+				angreifer.spezialfaehigkeitDeaktiviert();
+			}
+			if(opfer.getLebenspunkte() < 0) {
+				sieger = angreifer;
+				verlierer = opfer;
+				System.out.println(siegerAusgeben());
+				
+			}
+			fight();
+			
+		
+	}
+	
 	public String siegerAusgeben() {
-		return "Der Sieger ist: " + sieger;
+		return sieger.getName()+ " hat gegen " + verlierer.getName() + " gewonnen! Glückwunsch!";
 	}
 }

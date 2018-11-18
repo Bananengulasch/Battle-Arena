@@ -4,27 +4,14 @@ import java.util.Scanner;
 public class Kommandozeilenmenü {
 
 	Scanner scan;
-	Charakter c1;
-	Charakter c2;
-	Kampfarena a = new Kampfarena(c1,c2);
+	private int entscheidung;
 	
 	public Kommandozeilenmenü() {
 		this.scan = new Scanner(System.in);
-		charaktere();
 	}
 	
-	public void charaktere() {
-		c1 = new Drache("Schönwieser Drache", 500, false);
-		c2 = new Drache("Karröstner Zwerg", 500, false);
-	}
-
-	public void setupMenü() {
-		System.out.println("------------------------------");
-		System.out.println("SETUPMENÜ");
-		System.out.println("1) CHARAKTER 1");
-		System.out.println("2) CHARAKTER 2");
-		System.out.println("3) SPIEL STARTEN");
-		System.out.println("4) exit");
+	public int getEntscheidung() {
+		return entscheidung;
 	}
 	
 	public void MenüAnzeigen() {
@@ -36,81 +23,47 @@ public class Kommandozeilenmenü {
 		System.out.println("4) exit");
 	}
 	
-	public void setup() {
-		String s = "-";
-		while (!s.equals("2")) {
-			setupMenü();
-			s = scan.nextLine();
-			switch(s)
-			{
-			case "1":
-				this.charakterEins();
-				break;
-			case "2":
-				this.charakterZwei();
-				break;
-			case "3":
-				this.start();
-				break;
-			case "4":
-				System.out.println("Auf Wiedersehen!");
-				break;
-			default:
-				this.fehler();
-				break;
-			}
-		}
-		scan.close();
-	}
 	
-	public void charakterEins() {
+	public Charakter charakterEins(Charakter a) {
 		System.out.println("Bitte den Charakter (Drache/Zwerg) von Spieler 1 eingeben!");
 		String c = scan.nextLine();
 		System.out.println("Bitte den Namen von Spieler 1 eingeben!");
 		String n = scan.nextLine();
 		if(c.equals("Drache")) {
-			Charakter c1 = new Drache(n, 100, false);
-			a.setCharakter1(c1);
-			System.out.println(c1);
+			a = new Drache(n, 100, false);
 		}else {
 			if(c.equals("Zwerg")) {
-				Charakter c1 = new Zwerg(n, 100, false);
-				a.setCharakter1(c1);
-				System.out.println(c1);
+				a = new Zwerg(n, 100, false);
 			}else {
 				System.out.println("Dieser Charaktertyp existiert nicht!");
-				charakterEins();
+				charakterZwei(a);
 			}
 		}
-		setup();
+		return a;
 		
 	}
 	
-	public void charakterZwei() {
+	public Charakter charakterZwei(Charakter a) {
 		System.out.println("Bitte den Charakter (Drache/Zwerg) von Spieler 2 eingeben!");
 		String c = scan.nextLine();
 		System.out.println("Bitte den Namen von Spieler 2 eingeben!");
 		String n = scan.nextLine();
 		if(c.equals("Drache")) {
-			Charakter c2 = new Drache(n, 100, false);
-			a.setCharakter2(c2);
-			System.out.println(c2);
+			a = new Drache(n, 100, false);
 		}else {
 			if(c.equals("Zwerg")) {
-				Charakter c2 = new Zwerg(n, 100, false);
-				a.setCharakter2(c2);
-				System.out.println(c2);
+				a = new Zwerg(n, 100, false);
 			}else {
 				System.out.println("Dieser Charaktertyp existiert nicht!");
-				charakterZwei();
+				charakterZwei(a);
 			}
 		}
-		setup();
+		return a;
 	}
-
+	
 	public void start() {
 		String s = "-";
-		while (!s.equals("3")) {
+		if(!s.equals("3")) {
 			MenüAnzeigen();
 			s = scan.nextLine();
 			switch(s)
@@ -129,19 +82,19 @@ public class Kommandozeilenmenü {
 				break;
 			}
 		}
-		scan.close();
+		
 	}
 	
 	public void angreifen() {
-		a.setEntscheidung("1");
+		entscheidung = 1;
 	}
 	
 	public void aktivieren() {
-		a.setEntscheidung("2");
+		entscheidung = 2;
 	}
 	
 	public void deaktivieren() {
-		a.setEntscheidung("3");
+		entscheidung = 3;
 	}
 	
 	public void fehler() {

@@ -32,14 +32,17 @@ public class Zwerg extends Charakter{
 							gegner.schadenNehmen(ThreadLocalRandom.current().nextInt(min,max + 1)/2);
 						}
 					}
-				} else {
+					
 					if(wahrscheinlichkeit >= 1 && wahrscheinlichkeit <= 3) {
 						gegner.schadenNehmen(ThreadLocalRandom.current().nextInt(min,max + 1)*2);
 						}
 						else {
 							gegner.schadenNehmen(ThreadLocalRandom.current().nextInt(min,max + 1)/2);
 						}
-				}
+					
+				} 
+					
+			
 			
 		
 		}
