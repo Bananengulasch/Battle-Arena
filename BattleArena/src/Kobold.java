@@ -1,10 +1,10 @@
 import java.util.concurrent.ThreadLocalRandom;
 
-public class SexyPaul extends Charakter{
+public class Kobold extends Charakter{
 	
 	private int counter;
 	
-	public SexyPaul(String name, int lebenspunkte, boolean spezialfaehigkeit) {
+	public Kobold(String name, int lebenspunkte, boolean spezialfaehigkeit) {
 		super(name, lebenspunkte, spezialfaehigkeit);	
 	}
 	
@@ -16,7 +16,6 @@ public class SexyPaul extends Charakter{
 	public void angreifen(Charakter gegner) {
 		int min = 11;
 		int max = 12;
-		int verletzungswahrscheinlichkeit = ThreadLocalRandom.current().nextInt(1, 10 + 1);
 		if(super.isSpezialfaehigkeit() == true) {
 			gegner.spezialfaehigkeitDeaktiviert();
 			spezialfaehigkeitDeaktiviert();
@@ -31,13 +30,13 @@ public class SexyPaul extends Charakter{
 	public void spezialfaehigkeitAktiviert() {
 		
 		super.setSpezialfaehigkeit(true);
-		System.out.println("Spezialfähigkeit ---XHAMSTER--- aktiviert!");
-		xHamster();
+		System.out.println("Spezialfähigkeit ---GOLDHAMSTERN--- aktiviert!");
+		hamster();
 			
 		
 	}
 	
-	public void xHamster() {
+	public void hamster() {
 		this.setLebenspunkte(getLebenspunkte()+5);
 		
 	}

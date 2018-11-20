@@ -37,7 +37,7 @@ public class Kommandozeilenmenü {
 			if(c.toLowerCase().equals("zwerg")) {
 				a = new Zwerg(n, 100, false);
 			}else if(c.toLowerCase().equals("sexypaul")) {
-				a = new SexyPaul(n, 100, false);
+				a = new Kobold(n, 100, false);
 			}else  {
 				System.out.println("------------------------------------------------------------");
 				System.out.println("Dieser Charaktertyp existiert nicht!");
@@ -61,7 +61,7 @@ public class Kommandozeilenmenü {
 			if(c.toLowerCase().equals("zwerg")) {
 				a = new Zwerg(n, 100, false);
 			}else if(c.toLowerCase().equals("sexypaul")) {
-				a = new SexyPaul(n, 100, false);
+				a = new Kobold(n, 100, false);
 			}else {
 				System.out.println("------------------------------------------------------------");
 				System.out.println("Dieser Charaktertyp existiert nicht!");
